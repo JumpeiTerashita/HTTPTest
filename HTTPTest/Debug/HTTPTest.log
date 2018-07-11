@@ -1,0 +1,7 @@
+﻿  Source.cpp
+c:\users\t10930\source\repos\httptest\httptest\source.cpp(31): warning C4715: '<lambda_e273b765ed0c0d1e969cefe7a3290fcb>::operator()': 値を返さないコントロール パスがあります。
+  libcpprest140_2_10.lib(http_msg.obj) : MSIL .netmodule または /GL を伴ってコンパイルされたモジュールが見つかりました。/LTCG を使用して再開始してください。リンカーのパフォーマンスを向上させるためには、コマンドラインに /LTCG を追加してください。
+LINK : warning LNK4075: /INCREMENTAL は /LTCG の指定によって無視されます。
+Source.obj : warning LNK4075: /EDITANDCONTINUE は /OPT:LBR の指定によって無視されます。
+LINK : fatal error C1905: フロント エンドとバック エンドに互換性がありません (同じプロセッサを対象としなければなりません)。
+LINK : fatal error LNK1257: コードの生成に失敗しました。

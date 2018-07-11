@@ -1,0 +1,23 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Force-Enable-zlib-v140-windesktop-msvcstl-static-rt-dyn-x64)' == '' And ('$(PlatformToolset)' != 'v140' Or '$(ApplicationType)' != '' Or '$(Platform)' != 'x64')">
+    <Disable-zlib-v140-windesktop-msvcstl-static-rt-dyn-x64>true</Disable-zlib-v140-windesktop-msvcstl-static-rt-dyn-x64>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Force-Disable-zlib-v140-windesktop-msvcstl-static-rt-dyn-x64)' != ''">
+    <Disable-zlib-v140-windesktop-msvcstl-static-rt-dyn-x64>true</Disable-zlib-v140-windesktop-msvcstl-static-rt-dyn-x64>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Disable-zlib-v140-windesktop-msvcstl-static-rt-dyn-x64)' == ''">
+    <Link>
+      <AdditionalDependencies Condition="'$(Configuration)' == 'Debug'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\static\rt-dyn\x64\Debug\zlibstaticd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies Condition="'$(Configuration)' == 'Release'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\static\rt-dyn\x64\Release\zlibstatic.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies Condition="'$(Configuration)' == 'MinSizeRel'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\static\rt-dyn\x64\MinSizeRel\zlibstatic.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies Condition="'$(Configuration)' == 'RelWithDebInfo'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\static\rt-dyn\x64\RelWithDebInfo\zlibstatic.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup Condition="'$(Configuration)' == 'Debug' And '$(Disable-zlib-v140-windesktop-msvcstl-static-rt-dyn-x64)' == ''" />
+  <ItemGroup Condition="'$(Configuration)' == 'Release' And '$(Disable-zlib-v140-windesktop-msvcstl-static-rt-dyn-x64)' == ''" />
+  <ItemGroup Condition="'$(Configuration)' == 'MinSizeRel' And '$(Disable-zlib-v140-windesktop-msvcstl-static-rt-dyn-x64)' == ''" />
+  <ItemGroup Condition="'$(Configuration)' == 'RelWithDebInfo' And '$(Disable-zlib-v140-windesktop-msvcstl-static-rt-dyn-x64)' == ''" />
+</Project>
